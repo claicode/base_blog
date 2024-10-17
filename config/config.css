@@ -1,0 +1,21 @@
+:root {
+    --dark-color: #1f0202;
+    --accent-color: #ff5722;
+    --text-1-color: #e0e0e0;
+    --medium-light-color: #656565;
+    --medium-dark-color: #353535;
+    --text-l: 2.25vh;
+    --text-m: 1.75vh;
+    --text-s: 1.5vh;
+    --grid-border: 10px;
+    --s-border: 0.125vw;
+    --m-border: 0.25vw;
+    --l-border: 0.5vw;
+    --l-top-border: var(--l-border) var(--l-border) 0px 0px;
+    --m-top-border: var(--m-border) var(--m-border) 0px 0px;
+    --R-post-size:56px;
+    --L-post-size:calc(100vw - (var(--R-post-size) - 1vh));
+    --WSlides:5vw;
+    --font-pral:'Philosopher';
+    --font-content:'Lora'
+}
