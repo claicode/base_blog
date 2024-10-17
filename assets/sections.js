@@ -72,7 +72,7 @@ app.component('phrases', {
     methods: {
         typeText(text, delay) {
             const terminal = document.getElementById('terminal');
-            terminal.innerHTML = '<span>(CodeChow)/~> </span>'; // Limpiar el terminal
+            terminal.innerHTML = '<span>(CodeChow) ~ : </span>'; // Limpiar el terminal
             let charIndex = 0;
 
             const typingInterval = setInterval(() => {
