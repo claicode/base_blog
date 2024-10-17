@@ -1,8 +1,8 @@
 app.component('posts', {
     data() {
         return {
-            posts: this.loadData(),
-            dataPosts:this.loadData(),
+            posts: dataToPosts,
+            dataPosts:dataToPosts,
             categories:Object.keys(this.loadData()),
             activeCategories:[],
             actual:0,

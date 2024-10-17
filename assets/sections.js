@@ -59,17 +59,25 @@ app.component('contact', {
 app.component('phrases', {
     data() {
         return {
-            texts : [
-                "Conectando a la red...",
-                "Descargando archivos...",
-                "Instalando actualizaciones...",
-                "Verificando integridad...",
-                "Todo listo!"
-            ],
+            url:`https://raw.githubusercontent.com/claicode/base_blog/refs/heads/main/assets/terminalTexts.json`,
+            texts :["Cargando..."],
             index:0
         };
     },
     methods: {
+        getTextData(){
+            axios.get(this.url)
+                .then(response => {
+                    // Aquí puedes manejar la respuesta, por ejemplo, almacenar el contenido del documento
+                    this.texts = response.data;
+                    //document.getElementById("viewerPost").innerHTML = this.extDta
+                    console.log('Contenido del documento:', this.extDta);
+                })
+                .catch(error => {
+                    console.error('Error al cargar el documento:', error);
+                });
+
+        },
         typeText(text, delay) {
             const terminal = document.getElementById('terminal');
             terminal.innerHTML = '<span>(CodeChow) ~ : </span>'; // Limpiar el terminal
@@ -95,6 +103,7 @@ app.component('phrases', {
         }
     },
     mounted(){
+        this.getTextData()
         this.typeText(this.texts[this.index], 100);
     },
     template: `

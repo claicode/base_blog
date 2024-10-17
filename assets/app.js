@@ -23,31 +23,30 @@ const app = Vue.createApp({
             //this.update_size()
         },
         loadExtData(url) {
-            const configGet = {
-                url: url,
-                method: 'GET',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'origin':'localhost',
-                    'Access-Control-Allow-Headers': 'POST, GET, PUT, DELETE, OPTIONS, HEAD, Authorization, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin',
-                }
-            };
-            axios.get(configGet)
+            // const configGet = {
+            //     url: url,
+            //     method: 'GET',
+            //     headers: {
+            //         'Access-Control-Allow-Origin': '*'
+            //     }
+            // };
+            //let url = `https://raw.githubusercontent.com/claicode/base_blog/refs/heads/main/assets/terminalTexts.json`;
+            axios.get(url)
                 .then(response => {
                     // Aquí puedes manejar la respuesta, por ejemplo, almacenar el contenido del documento
                     this.extDta = response.data;
-                    document.getElementById("viewerPost").innerHTML = this.extDta
+                    //document.getElementById("viewerPost").innerHTML = this.extDta
                     console.log('Contenido del documento:', this.extDta);
                 })
                 .catch(error => {
                     console.error('Error al cargar el documento:', error);
                 });
+            return this.extDta
         },
 
     },
     mounted() {
         //this.loadData()
-        
         this.changePage('posts')
         //document.getElementById('').addEventListener("click",this.loadExtData())
     },
